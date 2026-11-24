@@ -9,9 +9,7 @@
 AND,((DOMAIN,api.locketcamera.com),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
 AND,((DOMAIN,us-central1-locket-4252a.cloudfunctions.net),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
 AND,((DOMAIN,firebaseremoteconfig.googleapis.com),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
-
-[URL Rewrite]
-^https:\/\/api\.locketcamera\.com\/generateFilteredImage 'https://locket.dinhduyvinh.tech/generateFilteredImage' 307
+AND,((DOMAIN,firebaseremoteconfigrealtime.googleapis.com),(PROTOCOL,UDP)),REJECT
 
 [Script]
 # RevenueCat - mở khóa Gold
@@ -20,11 +18,14 @@ locket_revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\
 # Xóa header cache
 locket_delete_header = type=http-request, pattern=^https:\/\/(api\.revenuecat\.com|firebaseremoteconfig\.googleapis\.com)\/.+, script-path=https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/js/deleteHeader.js, timeout=60
 
-# Firebase Remote Config + popup chào mừng Gold
+# Firebase Remote Config + popup chào mừng Gold (minhwuan)
 locket_unlocked = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/.+, script-path=https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/js/Locket_Unlocked.js, requires-body=true, max-size=-1, timeout=60
 
-# AI Filter / Photobooth (giữ server gốc)
-locket_filters = type=http-request, pattern=^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:[^?#]*\/)?generateFilteredImage(?:\?.*)?$, script-path=https://locket.dinhduyvinh.tech/js/Locket_Filters.js, requires-body=true, max-size=-1, timeout=120
+# Photobooth 4-shot + AI Filter (script còn sống)
+locket_pb_req = type=http-request, pattern=^https?:\/\/(us-central1-locket-4252a\.cloudfunctions\.net|api\.locketcamera\.com)\/generateFilteredImage, script-path=https://raw.githubusercontent.com/Xwuan19/Xwuan-Tweaks/main/scripts/locket_pb_req.js?v=20261124, requires-body=true, max-size=-1, timeout=120
+
+[Host]
+firebaseremoteconfigrealtime.googleapis.com = 0.0.0.0
 
 [MITM]
-hostname = %APPEND% api.locketcamera.com, firebaseremoteconfig.googleapis.com, api.revenuecat.com, us-central1-locket-4252a.cloudfunctions.net
+hostname = %APPEND% api.locketcamera.com, firebaseremoteconfig.googleapis.com, api.revenuecat.com, us-central1-locket-4252a.cloudfunctions.net, *.locketcamera.com
