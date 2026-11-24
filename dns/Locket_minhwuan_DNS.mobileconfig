@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://cloudflare-dns.com/dns-query</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>DNS profile minhwuan.com — dùng kèm module Locket. Để chống thu hồi Gold hiệu quả, dùng bản NextDNS template.</string>
+			<key>PayloadDisplayName</key>
+			<string>minhwuan Locket DNS</string>
+			<key>PayloadIdentifier</key>
+			<string>com.minhwuan.locket.dns</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>4FD6B7FA-279B-45F9-9926-28E194FCD36E</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>DNS kèm module Locket Gold Photobooth — minhwuan.com. Cài sau khi đã lên Gold bằng Shadowrocket.</string>
+	<key>PayloadDisplayName</key>
+	<string>minhwuan Locket DNS</string>
+	<key>PayloadIdentifier</key>
+	<string>com.minhwuan.locket.profile</string>
+	<key>PayloadOrganization</key>
+	<string>minhwuan.com</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>A8D54AF0-C54C-4C0F-A3ED-F7A463BCFB5D</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>TLS</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>45.90.28.0</string>
+					<string>45.90.30.0</string>
+				</array>
+				<key>ServerName</key>
+				<string>YOUR_NEXTDNS_ID.dns.nextdns.io</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Thay YOUR_NEXTDNS_ID bằng Configuration ID trên nextdns.io.</string>
+			<key>PayloadDisplayName</key>
+			<string>minhwuan Locket DNS (NextDNS)</string>
+			<key>PayloadIdentifier</key>
+			<string>com.minhwuan.locket.dns.nextdns</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>B1C2D3E4-F5A6-4789-B012-3456789ABCDE</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>DNS NextDNS chống thu hồi Locket Gold — minhwuan.com. Đổi YOUR_NEXTDNS_ID trước khi cài.</string>
+	<key>PayloadDisplayName</key>
+	<string>minhwuan Locket DNS (NextDNS)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.minhwuan.locket.profile.nextdns</string>
+	<key>PayloadOrganization</key>
+	<string>minhwuan.com</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>C2D3E4F5-A6B7-4890-C123-456789ABCDEF</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
