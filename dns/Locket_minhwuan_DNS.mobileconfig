@@ -8,12 +8,17 @@
 			<key>DNSSettings</key>
 			<dict>
 				<key>DNSProtocol</key>
-				<string>HTTPS</string>
-				<key>ServerURL</key>
-				<string>https://cloudflare-dns.com/dns-query</string>
+				<string>TLS</string>
+				<key>ServerAddresses</key>
+				<array>
+					<string>45.90.28.0</string>
+					<string>45.90.30.0</string>
+				</array>
+				<key>ServerName</key>
+				<string>e59e48.dns.nextdns.io</string>
 			</dict>
 			<key>PayloadDescription</key>
-			<string>DNS profile minhwuan.com — dùng kèm module Locket. Để chống thu hồi Gold hiệu quả, dùng bản NextDNS template.</string>
+			<string>DNS NextDNS chống thu hồi Locket Gold — minhwuan.com (ID: e59e48)</string>
 			<key>PayloadDisplayName</key>
 			<string>minhwuan Locket DNS</string>
 			<key>PayloadIdentifier</key>
@@ -21,13 +26,13 @@
 			<key>PayloadType</key>
 			<string>com.apple.dnsSettings.managed</string>
 			<key>PayloadUUID</key>
-			<string>4FD6B7FA-279B-45F9-9926-28E194FCD36E</string>
+			<string>22A9A4CF-4C82-4B78-94A1-2D9D480A482B</string>
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string>DNS kèm module Locket Gold Photobooth — minhwuan.com. Cài sau khi đã lên Gold bằng Shadowrocket.</string>
+	<string>DNS NextDNS Locket Gold Photobooth — minhwuan.com. Cài sau khi đã lên Gold bằng Shadowrocket module.</string>
 	<key>PayloadDisplayName</key>
 	<string>minhwuan Locket DNS</string>
 	<key>PayloadIdentifier</key>
@@ -39,7 +44,7 @@
 	<key>PayloadType</key>
 	<string>Configuration</string>
 	<key>PayloadUUID</key>
-	<string>A8D54AF0-C54C-4C0F-A3ED-F7A463BCFB5D</string>
+	<string>8CD2FA16-DD2E-4D97-8C76-0DEC63B9855E</string>
 	<key>PayloadVersion</key>
 	<integer>1</integer>
 </dict>
