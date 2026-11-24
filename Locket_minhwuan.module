@@ -1,0 +1,30 @@
+#!name=minhwuan - Locket Photobooth
+#!desc=Locket Gold Photobooth | minhwuan.com
+#!distributor=minhwuan.com
+#!author=Minh Quân
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Locket.png
+#!system=ios
+
+[Rule]
+AND,((DOMAIN,api.locketcamera.com),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+AND,((DOMAIN,us-central1-locket-4252a.cloudfunctions.net),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+AND,((DOMAIN,firebaseremoteconfig.googleapis.com),(PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+
+[URL Rewrite]
+^https:\/\/api\.locketcamera\.com\/generateFilteredImage 'https://locket.dinhduyvinh.tech/generateFilteredImage' 307
+
+[Script]
+# RevenueCat - mở khóa Gold
+locket_revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/js/Locket_RevenueCat.js, requires-body=true, max-size=-1, timeout=60
+
+# Xóa header cache
+locket_delete_header = type=http-request, pattern=^https:\/\/(api\.revenuecat\.com|firebaseremoteconfig\.googleapis\.com)\/.+, script-path=https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/js/deleteHeader.js, timeout=60
+
+# Firebase Remote Config + popup chào mừng Gold
+locket_unlocked = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/.+, script-path=https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/js/Locket_Unlocked.js, requires-body=true, max-size=-1, timeout=60
+
+# AI Filter / Photobooth (giữ server gốc)
+locket_filters = type=http-request, pattern=^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:[^?#]*\/)?generateFilteredImage(?:\?.*)?$, script-path=https://locket.dinhduyvinh.tech/js/Locket_Filters.js, requires-body=true, max-size=-1, timeout=120
+
+[MITM]
+hostname = %APPEND% api.locketcamera.com, firebaseremoteconfig.googleapis.com, api.revenuecat.com, us-central1-locket-4252a.cloudfunctions.net
