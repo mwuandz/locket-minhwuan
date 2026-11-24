@@ -9,7 +9,6 @@ if (!obj || !obj.entries) {
   $done({});
 } else {
 
-  // 1. GOLD, FEATURE GATES & PAYWALL
   Object.assign(obj.entries, {
     feature_gates: JSON.stringify({
       app_icon_picker: "enabled",
@@ -57,7 +56,7 @@ if (!obj || !obj.entries) {
         {
           title: "minhwuan.com",
           body: "💛Chúc bạn có trải nghiệm vui vẻ, đừng quên lên minhwuan.com để lụm vài thứ hay ho hơn nhé💛",
-          imageURL: "https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/assets/locket-logo.png"
+          imageURL: "https://raw.githubusercontent.com/mwuandz/locket-minhwuan/main/assets/locket-logo.svg"
         }
       ],
       primary_button_title: "Xong",
@@ -79,7 +78,6 @@ if (!obj || !obj.entries) {
     filter_upsell_enabled: "false"
   });
 
-  // 2. CAMERA / VIDEO
   Object.assign(obj.entries, {
     camera: JSON.stringify({
       gold_max_duration: 60.0,
@@ -93,7 +91,6 @@ if (!obj || !obj.entries) {
     })
   });
 
-  // 3. ADS OFF
   Object.assign(obj.entries, {
     history_ads_mode: "off",
     history_ads_prefetch_count: "0"
